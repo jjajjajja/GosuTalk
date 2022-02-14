@@ -22,7 +22,7 @@ const sock_server = createServer(async (s) => {
     client.setTimeout(10000);
     console.log(`connected from ${client.socket.localAddress}:${client.socket.localPort}`);
     try {
-        while (1) {
+        while (true) {
             const data = await client.read();
             if (data instanceof Buffer) {
                 const res = message_proc(data);
